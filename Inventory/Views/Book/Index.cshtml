@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Inventory.Models.Entity.BookModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<p>
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<p>
+    @using (Html.BeginForm()) {
+        <input type = "text" name = "search" class="form-control" placeholder="Search..."/>
+        <input type = "submit" class="btn btn-primary" value="Search for books..." />
+}
+    
+</p>
+
+<h2>Manage</h2>
+    <table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BookModelId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BookModelId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BookModelId })
+            </td>
+        </tr>
+    }
+
+</table>
+

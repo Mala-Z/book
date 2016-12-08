@@ -1,0 +1,17 @@
+﻿@model Inventory.Models.Entity.BookModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+    <div class="jumbotron">
+        @using (Html.BeginForm("Create", "Image", null, FormMethod.Post,
+                              new { enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(model => model.BookModelId)
+            @Html.Partial("_BookForm")
+        }
+    </div>
+

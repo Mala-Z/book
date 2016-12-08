@@ -1,0 +1,23 @@
+﻿@model Inventory.Models.Entity.BookModel
+
+
+<div class="form-group">
+    <label>Title</label>
+    @Html.TextBoxFor(a => a.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.Title)
+</div>
+
+<div class="form-group">
+    <label>Description</label>
+    @Html.TextBoxFor(a => a.Description, new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.Description)
+</div>
+
+<div class="form-group">
+    <label>Rating</label>
+    @Html.TextBoxFor(a => a.Rating, new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.Rating)
+    
+</div>
+
+<input type="submit" value="Save" class="btn btn-primary" id="createSave" />

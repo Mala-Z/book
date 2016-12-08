@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Inventory.Models.Entity.BookModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Collection</h2>
+
+
+@foreach (var item in Model)
+{
+    
+        <div class="col" style="padding:10px, 10px, 10px, 10px">
+            <div class="col-sm-6 col-md-4" >
+                <div class="thumbnail">
+                    <img src="~/Images/brownbook.jpg" alt="..." />
+                    <div class="caption">
+                        <p>Title: @Html.DisplayFor(modelItem => item.Title)</p>
+                        <p>Description: @Html.DisplayFor(modelItem => item.Description)</p>
+                        <p>Rating: @Html.DisplayFor(modelItem => item.Rating)</p>
+                    </div>
+                </div>
+            </div>
+           </div>
+}
+            
+
+
