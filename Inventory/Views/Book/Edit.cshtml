@@ -7,9 +7,8 @@
 <h2>Edit</h2>
 
     <div class="jumbotron">
-        @using (Html.BeginForm("Create", "Image", null, FormMethod.Post,
-                              new { enctype = "multipart/form-data" }))
-        {
+       @using (Html.BeginForm())
+       {
             @Html.HiddenFor(model => model.BookModelId)
             @Html.Partial("_BookForm")
         }
